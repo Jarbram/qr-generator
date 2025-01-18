@@ -8,8 +8,8 @@
     ],
     "routes": [
         {
-            "src": "/api/qr",
-            "dest": "/api/qr.go"
+            "src": "/api/(.*)",
+            "dest": "/api"
         }
     ]
 } 
