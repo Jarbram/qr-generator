@@ -1,4 +1,4 @@
-package handler
+package main
 
 import (
 	"bytes"
@@ -43,4 +43,16 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	// Configurar headers para imagen PNG
 	w.Header().Set("Content-Type", "image/png")
 	w.Write(png)
+}
+
+func main() {
+	// Registrar el handler para la ruta /api
+	http.HandleFunc("/api", Handler)
+
+	// Puerto por defecto para Vercel
+	port := "8080"
+	fmt.Printf("Servidor iniciado en el puerto %s...\n", port)
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
+		fmt.Printf("Error al iniciar el servidor: %v\n", err)
+	}
 } 
