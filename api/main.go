@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 	"image/color"
 	"net/http"
@@ -22,7 +21,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Crear el código QR en memoria
-	var buf bytes.Buffer
 	qr, err := qrcode.New(text, qrcode.High)
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Error al generar QR: %v", err), http.StatusInternalServerError)
