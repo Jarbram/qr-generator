@@ -1,11 +1,10 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "api/*.go",
-            "use": "@vercel/go"
+    "functions": {
+        "api/*.go": {
+            "runtime": "vercel-go@1.0.0"
         }
-    ],
+    },
     "routes": [
         {
             "src": "/api/(.*)",

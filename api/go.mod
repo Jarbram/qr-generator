@@ -1,4 +1,4 @@
-module qr-generator
+module api
 
 go 1.22.2
 
